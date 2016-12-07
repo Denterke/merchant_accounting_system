@@ -1,0 +1,11 @@
+@(contractors: List[Contractors])
+
+@main("Welcome to Play") {
+
+    <ul>
+    @for(contractor <- contractors) {
+        <li>@contractor.name</li>
+    }
+    </ul>
+
+}
