@@ -1,11 +1,5 @@
-@(contractors: List[Contractors])
+@main("Главная") {
 
-@main("Welcome to Play") {
-
-    <ul>
-    @for(contractor <- contractors) {
-        <li>@contractor.name</li>
-    }
-    </ul>
+    <a href='@routes.ContractorsController.index()'>API контрагенты</a>
 
 }

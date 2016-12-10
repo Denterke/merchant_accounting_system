@@ -1,0 +1,13 @@
+@(contractors: List[Contractors])
+
+@main("Контрагенты") {
+
+    Список контрагентов:
+    <ul>
+    @for(contractor <- contractors) {
+        <li>@contractor.name</li>
+    }
+    </ul>
+
+    <a href='@routes.ContractorsController.create()'>Добавить контрагента</a>
+}

@@ -19,6 +19,9 @@ public class Contractors extends Model {
     public static Finder<Long, Contractors> find = new Finder<Long, Contractors>(Contractors.class);
 
     public static List<Contractors> all() {
+
         return find.all();
     }
+
+
 }
