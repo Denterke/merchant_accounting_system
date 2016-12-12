@@ -5,11 +5,9 @@ import models.Contractors;
 import play.*;
 import play.mvc.*;
 
-import views.html.*;
+import views.html.contractors.*;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 public class ContractorsController extends Controller{
@@ -36,7 +34,6 @@ public class ContractorsController extends Controller{
 
         Contractors name = filledForm.get();
 
-        System.out.println(new String(name.name.getBytes("ISO-8859-1"), "UTF-8"));
         filledForm.get();
         name.save();
         return redirect(routes.ContractorsController.index());

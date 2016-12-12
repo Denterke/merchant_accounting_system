@@ -1,0 +1,15 @@
+@(nomenclatures: List[Nomenclatures])
+
+@main("Номенклатура") {
+
+    Список номенаклатуры:
+    <ul>
+    @for(nomenclature <- nomenclatures) {
+        <li>@nomenclature.name</li>
+    }
+    </ul>
+
+    <p><a href='@routes.NomenclaturesController.create()'>Добавить контрагента</a></p>
+
+    <p><a href='@routes.Application.index()'>На главную</a></p>
+}

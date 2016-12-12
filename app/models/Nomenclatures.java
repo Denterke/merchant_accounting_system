@@ -1,15 +1,15 @@
 package models;
 
-import java.io.UnsupportedEncodingException;
-import java.util.*;
-import javax.persistence.*;
-
 import com.avaje.ebean.Model;
-import play.data.format.*;
-import play.data.validation.*;
+import play.data.validation.Constraints;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 @Entity
-public class Contractors extends Model {
+public class Nomenclatures extends Model {
 
     @Id
     public Integer id;
@@ -17,9 +17,9 @@ public class Contractors extends Model {
     @Constraints.Required
     public String name;
 
-    public static Finder<Long, Contractors> find = new Finder<Long, Contractors>(Contractors.class);
+    public static Finder<Long, Nomenclatures> find = new Finder<Long, Nomenclatures>(Nomenclatures.class);
 
-    public static List<Contractors> all() {
+    public static List<Nomenclatures> all() {
 
         return find.all();
     }
