@@ -1,6 +1,7 @@
 package controllers;
 import models.Contractors;
 import models.Documents;
+import models.Goods_receipt;
 import play.data.DynamicForm;
 import play.data.Form;
 
@@ -41,13 +42,29 @@ public class DocumentsController extends Controller{
 
         System.out.println(document.id);
 
-        for (int i = 0; i <= Integer.parseInt(form_data.get("nomenclature_count")); i++) {
+        for (int i = 0; i < Integer.parseInt(form_data.get("nomenclature_count")); i++) {
+            Goods_receipt good_receipt = new Goods_receipt();
+            good_receipt.document_id = document.id;
+
+            String nomenclature_field_name = "nomenclature_" + Integer.toString(i);
+            good_receipt.nomenclature_id = Integer.parseInt(form_data.get(nomenclature_field_name));
+
+            String count_field_name = "count_" + Integer.toString(i);
+            good_receipt.count = Integer.parseInt(form_data.get(count_field_name));
+
+            String price_field_name = "price_" + Integer.toString(i);
+            good_receipt.price = Integer.parseInt(form_data.get(price_field_name));
+
+            good_receipt.save();
         }
 
-        Nomenclatures nomenclature = new Nomenclatures();
-        nomenclature.name = Form.form().bindFromRequest().get("test_2");
-        nomenclature.save();
-
         return redirect(routes.DocumentsController.index());
+    }
+
+    public Result show(Integer id) {
+        return ok(documents_information.render(
+                Documents.get_by_id(new Long(id)),
+                Goods_receipt.get_by_document_id(new Long(id)))
+        );
     }
 }

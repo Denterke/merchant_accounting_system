@@ -19,6 +19,7 @@ POST    /nomenclatures              controllers.NomenclaturesController.store()
 GET     /documents                  controllers.DocumentsController.index()
 GET     /documents/create           controllers.DocumentsController.create()
 POST    /documents                  controllers.DocumentsController.store()
+GET     /documents/:id              controllers.DocumentsController.show(id: Integer)
 
 
 # Map static resources from the /public folder to the /assets URL path

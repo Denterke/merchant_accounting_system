@@ -42,4 +42,7 @@ public class Documents extends Model{
         return  find.all();
     }
 
+    public static  Documents get_by_id(Long id) {
+        return find.byId(id);
+    }
 }

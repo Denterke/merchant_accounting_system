@@ -1,0 +1,18 @@
+@(document: Documents, goods_receipt: List[Goods_receipt])
+
+@main("Информация о документе") {
+  @document.id
+
+  <br>
+  Информация о товарах:
+
+  <ul>
+  @for(good_receipt <- goods_receipt) {
+    <li>
+      @good_receipt.document_id
+    </li>
+    }
+  </ul>
+
+  <p><a href='@routes.Application.index()'>На главную</a></p>
+}
