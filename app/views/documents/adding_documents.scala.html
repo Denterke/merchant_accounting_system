@@ -31,21 +31,28 @@
 
     <br>
 
-    <input type="hidden" value="2" name="nomenclature_count">
+    <input type="hidden" value="0" name="nomenclature_count" id="counter">
 
     <button id="create-new" onclick="CreateNew();">Создать</button>
   </form>
 
     <script>
+        var count = 0;
+
         function CreateNew() {
             var div = document.createElement("div");
-            div.innerHtml = "<select name=\"nomenclature_1\">";
+            div.innerHtml = "<select name=\"nomenclature_\""+count+">";
             @for(nomenclature <- nomenclatures) {
                 div.innerHTML += "<option value=\"@nomenclature.id\">@nomenclature.name</option>";
             }
             div.innerHTML += "</select>";
-            div.innerHTML += '<input type="number" name="count_1" min="1" max="1000" value="1">';
-            div.innerHTML += '<input type="number" name="price_1" min="1" max="900000" value="1">';
+            div.innerHTML += '<input type="number" name="count_'+count+'" min="1" max="1000" value="1">';
+            div.innerHTML += '<input type="number" name="price_'+count+'" min="1" max="900000" value="1">';
+
+            document.getElementsByTagName("form")[0].appendChild(div);
+            count++;
+
+            document.getElementById("counter").value = count;
         }
     </script>
 }
