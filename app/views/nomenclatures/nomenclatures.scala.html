@@ -5,11 +5,15 @@
     Список номенаклатуры:
     <ul>
     @for(nomenclature <- nomenclatures) {
-        <li>@nomenclature.name</li>
+        <li>
+            @nomenclature.name <br>
+            <a href='@routes.NomenclaturesController.show(nomenclature.id)'>Остатки по товару</a>
+        </li>
+        <br>
     }
     </ul>
 
-    <p><a href='@routes.NomenclaturesController.create()'>Добавить контрагента</a></p>
+    <p><a href='@routes.NomenclaturesController.create()'>Добавить номенклатуру</a></p>
 
     <p><a href='@routes.Application.index()'>На главную</a></p>
 }

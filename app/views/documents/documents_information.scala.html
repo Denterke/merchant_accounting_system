@@ -1,18 +1,19 @@
 @(document: Documents, goods_receipt: List[Goods_receipt])
 
 @main("Информация о документе") {
-  @document.id
-
+  ID Документа: @document.id
   <br>
-  Информация о товарах:
 
   <ul>
   @for(good_receipt <- goods_receipt) {
     <li>
-      @good_receipt.document_id
+      Продан товар: @good_receipt.nomenclature.name <br>
+      Количество: @good_receipt.count  <br>
+      Цена за штуку: @good_receipt.price  <br>
     </li>
+    <br>
     }
   </ul>
 
-  <p><a href='@routes.Application.index()'>На главную</a></p>
+  <p><a href='@routes.DocumentsController.index()'>Назад к документам</a></p>
 }

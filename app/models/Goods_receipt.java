@@ -1,6 +1,8 @@
 package models;
 
+import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
+import com.avaje.ebean.Update;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
@@ -24,7 +26,8 @@ public class Goods_receipt extends Model{
     public Integer price;
 
     @ManyToOne()
-    public Documents document;
+    @JoinColumn(name = "nomenclature_id", insertable = false, updatable = false)
+    public Nomenclatures nomenclature;
 
     public static Finder<Long, Goods_receipt> find = new Finder<Long, Goods_receipt>(Goods_receipt.class);
 
@@ -34,10 +37,9 @@ public class Goods_receipt extends Model{
 
     public static List<Goods_receipt> get_by_document_id(Long document_id) {
 
-        System.out.println("Документ id: " + String.valueOf(document_id));
         return  find
                 .where()
-                .eq("document_id", "30")
+                .eq("document_id", toIntExact(document_id))
                 .findList();
     }
 }

@@ -3,26 +3,29 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                               controllers.Application.index()
 
 ##API контрагенты
-GET     /contractors                controllers.ContractorsController.index()
-GET     /contractors/create         controllers.ContractorsController.create()
-POST    /contractors                controllers.ContractorsController.store()
+GET     /contractors                    controllers.ContractorsController.index()
+GET     /contractors/create             controllers.ContractorsController.create()
+POST    /contractors                    controllers.ContractorsController.store()
 
 ##API номенклатура
-GET     /nomenclatures              controllers.NomenclaturesController.index()
-GET     /nomenclatures/create       controllers.NomenclaturesController.create()
-POST    /nomenclatures              controllers.NomenclaturesController.store()
+GET     /nomenclatures                  controllers.NomenclaturesController.index()
+GET     /nomenclatures/create           controllers.NomenclaturesController.create()
+POST    /nomenclatures                  controllers.NomenclaturesController.store()
+GET     /nomenclatures/:id              controllers.NomenclaturesController.show(id: Integer)
 
 ##API документы
-GET     /documents                  controllers.DocumentsController.index()
-GET     /documents/create           controllers.DocumentsController.create()
-POST    /documents                  controllers.DocumentsController.store()
-GET     /documents/:id              controllers.DocumentsController.show(id: Integer)
+GET     /documents                      controllers.DocumentsController.index()
+GET     /documents/create               controllers.DocumentsController.create()
+POST    /documents                      controllers.DocumentsController.store()
+GET     /documents/:id                  controllers.DocumentsController.show(id: Integer)
+GET     /down_conduct_documents/:id     controllers.DocumentsController.down_conduct(id: Integer)
+GET     /up_conduct_documents/:id       controllers.DocumentsController.up_conduct(id: Integer)
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                   controllers.Assets.at(path="/public", file)
 
     

@@ -12,6 +12,13 @@
           <li>Продавец: @document.contractor.name</li>
           <li>Проведен: @document.is_conducted</li>
         </ul>
+
+        @if(document.is_conducted == false) {
+          <a href='@routes.DocumentsController.up_conduct(document.id)'> Провести документ</a><br>
+        } else {
+          <a href='@routes.DocumentsController.down_conduct(document.id)'> Отменить проведенный документ</a><br>
+        }
+
         <a href='@routes.DocumentsController.show(document.id)'> Подробная информация о товарах</a>
       </li>
       <br>

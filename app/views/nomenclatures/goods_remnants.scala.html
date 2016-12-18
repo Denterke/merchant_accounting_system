@@ -1,0 +1,20 @@
+@(goods_remnants: List[Goods_remnants])
+
+@main("Регистры остатки") {
+
+  Список остатков:
+
+  <ul>
+  @for(good_remnant <- goods_remnants) {
+    <li>
+      Количество: @good_remnant.count  <br>
+      Цена за штуку: @good_remnant.price  <br>
+      Контрагент: @good_remnant.document.contractor.name <br>
+      Документ: №@good_remnant.document.id от @good_remnant.document.string_date
+    </li>
+    <br>
+    }
+  </ul>
+
+  <p><a href='@routes.NomenclaturesController.index()'>Назад</a></p>
+}
