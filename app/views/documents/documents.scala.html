@@ -2,30 +2,32 @@
 
 @main("Документы") {
 
-  Список документов:
+<H1 class="page-title">Документы</H1>
+
   <ul>
     @for(document <- documents) {
       <li>
-        <ul>
-          <li>ID документа: @document.id</li>
-          <li>Дата документа: @document.string_date</li>
-          <li>Продавец: @document.contractor.name</li>
-          <li>Проведен: @document.is_conducted</li>
+        <ul class="text-aligned-left">
+            <li><b>⚪ ID</b>: @document.id</li>
+            <li><b>⚪ Дата</b>: @document.string_date</li>
+            <li><b>⚪ Продавец</b>: @document.contractor.name</li>
+            <li><b>⚪ Проведен</b>: @document.is_conducted</li>
         </ul>
 
         @if(document.is_conducted == false) {
-          <a href='@routes.DocumentsController.up_conduct(document.id)'> Провести документ</a><br>
+          <a href='@routes.DocumentsController.up_conduct(document.id)'><input type="button" value="Провести документ"></a><br>
         } else {
-          <a href='@routes.DocumentsController.down_conduct(document.id)'> Отменить проведенный документ</a><br>
+          <a href='@routes.DocumentsController.down_conduct(document.id)'><input type="button" value="Отменить проведение"></a><br>
         }
 
-        <a href='@routes.DocumentsController.show(document.id)'> Подробная информация о товарах</a>
+        <a href='@routes.DocumentsController.show(document.id)'><input type="button" value="Информация о товарах"></a>
       </li>
+      <hr>
       <br>
     }
   </ul>
 
-  <p><a href='@routes.DocumentsController.create()'>Добавить документ</a></p>
+  <p><a href='@routes.DocumentsController.create()'><input type="button" value="Добавить документ"></a></p>
 
   <p><a href='@routes.Application.index()'>На главную</a></p>
 }

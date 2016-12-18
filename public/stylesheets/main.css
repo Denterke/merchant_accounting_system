@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&subset=cyrillic');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', arial, sans-serif;
+    background-color: #F5F5F5;
+    text-align: center;
+    font-weight: 300;
+}
+
+a {
+    color: black;
+}
+
+H1 {
+    color: #333;
+}
+
+input[type="button"], button {
+    width: 300px;
+    height: 50px;
+    background: #3b8384;
+    color: white;
+    font-size: 25px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+input[type="button"]:hover, button:hover {
+    background: #285758;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 500px;
+    height: 50px;
+    border: 2px solid #3b8384;
+    font-size: 25px;
+}
+
+input[type="date"], select, input[type="number"] {
+    width: 200px;
+    height: 25px;
+    border: 2px solid #3b8384;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.header {
+    background-image: radial-gradient(circle at 48% 108%, #607d8b, #243238);
+    height: 15vw;
+    text-align: center;
+    position: relative;
+}
+
+.header-logotype {
+    height: 7vw;
+    margin-top: 3vw;
+}
+
+.navigation-bar {
+    background: #243238;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation-bar span {
+    display: inline-block;
+    color: white;
+    font-size: 2vw;
+    margin: 0.5vw 0;
+    padding: 0 3vw;
+    transition: background 0.3s;
+}
+
+.navigation-bar span:hover {
+    cursor: pointer;
+    background: #455d69;
+}
+
+.navigation-bar span:not(:last-child) {
+    border-right: 1px solid white;
+}
+
+.content {
+    width: 80%;
+    margin: 3% 10%;
+}
+
+.page-title {
+    padding-top: 50px;
+}
+
+li {
+    /*text-decoration: underline;*/
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.text-aligned-left {
+    text-align: left;
+    margin-left: 38%;
+    list-style-type: none;
+}
+
+.button1to3 {
+    display: inline-block;
+    width: 30vw;
+    padding-top: 20vw;
+    margin-top: 5vw;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+}

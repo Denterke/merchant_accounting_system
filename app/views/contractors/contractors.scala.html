@@ -1,15 +1,15 @@
 @(contractors: List[Contractors])
 
 @main("Контрагенты") {
+    <H1 class="page-title">Контрагенты</H1>
 
-    Список контрагентов:
     <ul>
     @for(contractor <- contractors) {
-        <li>@contractor.name</li>
+        <li>⚪ @contractor.name</li>
     }
     </ul>
 
-    <p><a href='@routes.ContractorsController.create()'>Добавить контрагента</a></p>
+    <p><a href='@routes.ContractorsController.create()'><input type="button" value="Добавить контрагента"></a></p>
 
     <p><a href='@routes.Application.index()'>На главную</a></p>
 }

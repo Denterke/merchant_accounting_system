@@ -1,8 +1,11 @@
 @main("Номенклатура добавление") {
+    <H1 class="page-title">Добавление номенклатуры</H1>
 
-    <form action="@routes.NomenclaturesController.store()" method="post" accept-charset="utf-8">
-        <input type="text" name="name">
-        <button>Создать</button>
-    </form>
-
+    <div class="content">
+        <form action="@routes.NomenclaturesController.store()" method="post" accept-charset="utf-8">
+            <input type="text" name="name">
+            <br><br>
+            <button>Создать</button>
+        </form>
+    </div>
 }

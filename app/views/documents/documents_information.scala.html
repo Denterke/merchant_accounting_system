@@ -1,17 +1,19 @@
 @(document: Documents, goods_receipt: List[Goods_receipt])
 
 @main("Информация о документе") {
-  ID Документа: @document.id
+
+<H1 class="page-title">Информация о документе @document.id</H1>
+
   <br>
 
   <ul>
   @for(good_receipt <- goods_receipt) {
     <li>
-      Продан товар: @good_receipt.nomenclature.name <br>
-      Количество: @good_receipt.count  <br>
-      Цена за штуку: @good_receipt.price  <br>
+        <b>Продан товар: </b>@good_receipt.nomenclature.name <br>
+        <b>Количество: </b>@good_receipt.count  <br>
+        <b>Цена за штуку: </b>@good_receipt.price  <br>
     </li>
-    <br>
+    <hr>
     }
   </ul>
 

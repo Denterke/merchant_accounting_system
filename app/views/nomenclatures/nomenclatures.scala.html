@@ -2,18 +2,24 @@
 
 @main("Номенклатура") {
 
-    Список номенаклатуры:
+<H1 class="page-title">Номенклатуры</H1>
+
     <ul>
     @for(nomenclature <- nomenclatures) {
         <li>
-            @nomenclature.name <br>
-            <a href='@routes.NomenclaturesController.show(nomenclature.id)'>Остатки по товару</a>
+            <H3>@nomenclature.name</H3>
+            <a href='@routes.NomenclaturesController.show(nomenclature.id)'>
+                <input type="button" value="Остатки по товару">
+            </a>
         </li>
         <br>
+        <hr>
     }
     </ul>
 
-    <p><a href='@routes.NomenclaturesController.create()'>Добавить номенклатуру</a></p>
+<br>
+
+<p><a href='@routes.NomenclaturesController.create()'><input type="button" value="Добавить номенклатуру"></a></p>
 
     <p><a href='@routes.Application.index()'>На главную</a></p>
 }

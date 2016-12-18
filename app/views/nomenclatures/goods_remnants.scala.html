@@ -1,18 +1,17 @@
 @(goods_remnants: List[Goods_remnants])
 
 @main("Регистры остатки") {
-
-  Список остатков:
+<H1 class="page-title">Список остатков</H1>
 
   <ul>
   @for(good_remnant <- goods_remnants) {
     <li>
-      Количество: @good_remnant.count  <br>
-      Цена за штуку: @good_remnant.price  <br>
-      Контрагент: @good_remnant.document.contractor.name <br>
-      Документ: №@good_remnant.document.id от @good_remnant.document.string_date
+        <b>Количество: </b>@good_remnant.count  <br>
+        <b>Цена за штуку: </b>@good_remnant.price  <br>
+        <b>Контрагент: </b>@good_remnant.document.contractor.name <br>
+        <b>Документ: </b>№@good_remnant.document.id от @good_remnant.document.string_date
     </li>
-    <br>
+    <hr>
     }
   </ul>
 

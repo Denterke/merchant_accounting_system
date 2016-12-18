@@ -1,8 +1,11 @@
 @main("Контрагенты добавление") {
+    <H1 class="page-title">Добавление контрагента</H1>
 
-    <form action="@routes.ContractorsController.store()" method="post" accept-charset="utf-8">
-        <input type="text" name="name">
-        <button>Создать</button>
-    </form>
-
+    <div class="content">
+        <form action="@routes.ContractorsController.store()" method="post" accept-charset="utf-8">
+            <input type="text" name="name">
+            <br><br>
+            <button>Создать</button>
+        </form>
+    </div>
 }

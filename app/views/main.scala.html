@@ -6,11 +6,24 @@
     <head>
         <title>@title</title>
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
+        <div class="header">
+            <a href="/">
+                <img src="http://www.fonts-online.ru/img_fonts.php?id=10330&t=Merchant&f=FFFFFF" class="header-logotype">
+            </a>
+
+            <div class="navigation-bar">
+                <a href="/"><span>Главная</span></a>
+                <a href="/"><span>Контрагенты</span></a>
+                <a href="/"><span>Номенклатура</span></a>
+                <a href="/"><span>Документы</span></a>
+            </div>
+        </div>
         @content
     </body>
 </html>

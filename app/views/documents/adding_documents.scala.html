@@ -2,6 +2,10 @@
 
 @main("Документы добавление") {
 
+<H1 class="page-title">Добавление документов</H1>
+
+<br>
+
   <form action="@routes.DocumentsController.store()" method="post" accept-charset="utf-8">
     <input type="date" name="date">
     <select name="contractor.id">
@@ -10,13 +14,18 @@
       }
     </select>
     <input type="radio" name="is_conducted" value="true"> Провести документ
-    <br>
+      <br>
+      <br>
+
+      <div id="creating-container">
+          <H2>Номенклатура</H2>
+      </div>
 
     <input type="hidden" value="0" name="nomenclature_count" id="counter">
 
     <button>Создать</button>
 
-      <input type="button" id="create-new" onclick="CreateNew();" value="Добавить еще!">
+      <input type="button" id="create-new" onclick="CreateNew();" value="Добавить пункт">
   </form>
 
     <script>
@@ -39,9 +48,9 @@
             div.appendChild(select);
 
             div.innerHTML += '<input type="number" name="count_'+count+'" min="1" max="1000" value="1">';
-            div.innerHTML += '<input type="number" name="price_'+count+'" min="1" max="900000" value="1">';
+            div.innerHTML += '<input type="number" name="price_'+count+'" min="1" max="900000" value="1"><br><br>';
 
-            document.getElementsByTagName("form")[0].appendChild(div);
+            document.getElementById("creating-container").appendChild(div);
             count++;
 
             document.getElementById("counter").value = count;
