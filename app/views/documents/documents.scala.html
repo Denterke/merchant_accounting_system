@@ -1,0 +1,23 @@
+@(documents: List[Documents])
+
+@main("Документы") {
+
+  Список документов:
+  <ul>
+    @for(document <- documents) {
+      <li>
+        <ul>
+          <li>ID документа: @document.id</li>
+          <li>Дата документа: @document.string_date</li>
+          <li>Продавец: @document.contractor.name</li>
+          <li>Проведен: @document.is_conducted</li>
+        </ul>
+      </li>
+      <br>
+    }
+  </ul>
+
+  <p><a href='@routes.DocumentsController.create()'>Добавить документ</a></p>
+
+  <p><a href='@routes.Application.index()'>На главную</a></p>
+}

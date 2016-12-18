@@ -1,0 +1,34 @@
+@(contractors: List[Contractors], nomenclatures: List[Nomenclatures])
+
+@main("Документы добавление") {
+
+  <form action="@routes.DocumentsController.store()" method="post" accept-charset="utf-8">
+    <input type="date" name="date">
+    <select name="contractor.id">
+      @for(contractor <- contractors) {
+        <option value="@contractor.id">@contractor.name</option>
+      }
+    </select>
+    <input type="radio" name="is_conducted" value="true"> Провести документ
+    <br>
+
+    <select name="nomenclature_0">
+      @for(nomenclature <- nomenclatures) {
+        <option value="@nomenclature.id">@nomenclature.name</option>
+      }
+    </select>
+    <br>
+    <select name="nomenclature_1">
+    @for(nomenclature <- nomenclatures) {
+      <option value="@nomenclature.id">@nomenclature.name</option>
+    }
+    </select>
+
+    <br>
+
+    <input type="hidden" value="2" name="nomenclature_count">
+
+    <button>Создать</button>
+  </form>
+
+}

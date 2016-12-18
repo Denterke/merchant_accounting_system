@@ -1,12 +1,8 @@
-@(categoryForm: Form[Nomenclatures])
-
-@import helper._
-
 @main("Номенклатура добавление") {
 
-    @form(routes.NomenclaturesController.store(), Symbol("accept-charset") -> "UTF-8") {
-        @inputText(categoryForm("name"))
-        <input type="submit" value="Создать">
-    }
+    <form action="@routes.NomenclaturesController.store()" method="post" accept-charset="utf-8">
+        <input type="text" name="name">
+        <button>Создать</button>
+    </form>
 
 }

@@ -18,24 +18,14 @@ public class NomenclaturesController extends Controller{
     }
 
     public Result create() {
-
-        Form<Nomenclatures> filledForm = Form.form(Nomenclatures.class).bindFromRequest();
-
-        return ok(adding_nomenclatures.render(filledForm));
+        return ok(adding_nomenclatures.render());
     }
 
     public Result store() throws UnsupportedEncodingException, FileNotFoundException {
 
-        Form<Nomenclatures> filledForm = Form.form(Nomenclatures.class).bindFromRequest();
+        Nomenclatures nomenclature = Form.form(Nomenclatures.class).bindFromRequest().get();
+        nomenclature.save();
 
-        if (filledForm.hasErrors()) {
-            return badRequest(adding_nomenclatures.render(filledForm));
-        }
-
-        Nomenclatures name = filledForm.get();
-
-        filledForm.get();
-        name.save();
         return redirect(routes.NomenclaturesController.index());
     }
 

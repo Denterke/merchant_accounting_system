@@ -1,12 +1,8 @@
-@(categoryForm: Form[Contractors])
-
-@import helper._
-
 @main("Контрагенты добавление") {
 
-    @form(routes.ContractorsController.store(), Symbol("accept-charset") -> "UTF-8") {
-        @inputText(categoryForm("name"))
-        <input type="submit" value="Создать">
-    }
+    <form action="@routes.ContractorsController.store()" method="post" accept-charset="utf-8">
+        <input type="text" name="name">
+        <button>Создать</button>
+    </form>
 
 }

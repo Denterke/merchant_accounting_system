@@ -15,6 +15,12 @@ GET     /nomenclatures              controllers.NomenclaturesController.index()
 GET     /nomenclatures/create       controllers.NomenclaturesController.create()
 POST    /nomenclatures              controllers.NomenclaturesController.store()
 
+##API документы
+GET     /documents                  controllers.DocumentsController.index()
+GET     /documents/create           controllers.DocumentsController.create()
+POST    /documents                  controllers.DocumentsController.store()
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
